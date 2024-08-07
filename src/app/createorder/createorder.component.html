@@ -1,0 +1,43 @@
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+    <div>
+      <label for="cname">Customer Name<span class="required">*</span></label>
+      <input type="text" id="cname" name="cname" [(ngModel)]="formData.cname" required>
+    </div>
+    
+    <div>
+      <label for="cid">Customer ID <span class="required">*</span></label>
+      <input type="text" id="cid" name="cid" [(ngModel)]="formData.cid">
+    </div>
+  
+    <div>
+      <label for="cmail">Customer Email<span class="required">*</span></label>
+      <input type="email" id="cmail" name="cmail" [(ngModel)]="formData.cmail">
+    </div>
+  
+    <div>
+      <label for="cnumber">Customer Phone Number<span class="required">*</span></label>
+      <input type="text" id="cnumber" name="cnumber" [(ngModel)]="formData.cnumber">
+    </div>
+  
+    <div>
+      <label for="pruposed_date">Proposed Date<span class="required">*</span></label>
+      <input type="date" id="pruposed_date" name="pruposed_date" [(ngModel)]="formData.pruposed_date" required>
+    </div>
+  
+    <div>
+      <label for="cadress">Address<span class="required">*</span></label>
+      <input type="text" id="cadress" name="cadress" [(ngModel)]="formData.cadress" required >
+    </div>
+  
+    <button type="submit">Submit</button>
+  
+  
+
+@if (isSubmitted){
+<div >
+    <p> Submitted successfully! </p>
+  </div>
+}
+</form>
+
+

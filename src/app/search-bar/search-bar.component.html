@@ -1,0 +1,19 @@
+
+
+
+<nav class="navbar">
+  <div class="navbar-content">
+    <div class="search-bar-container">
+      <div class="search-input-wrapper">
+        <input type="number" class="search-input" placeholder="Search order id..." [(ngModel)]="woID" (keyup.enter)="Onsearch()">
+        <button (click)="Onsearch()" type="button"  class="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+    <div class="navbar-buttons">
+      <button (click)="createorder()" class="navbar-button">New WorkOder</button>
+      <button (click)="ShowDetails()" class="navbar-button">Show Details</button>
+    </div>
+  </div>
+</nav>

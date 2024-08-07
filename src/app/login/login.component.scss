@@ -1,0 +1,67 @@
+
+.login-container {
+  width: 600px; /* Increased width */
+  margin: 0 auto;
+  padding: 50px; /* Increased padding for better spacing */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 40%;
+  left: 50%; /* Centered horizontally */
+  transform: translate(-50%, -50%);
+}
+
+label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 20px; /* Increased label font size */
+  
+}
+
+input {
+  width: 100%;
+  padding: 15px; /* Increased input padding */
+  margin-bottom: 25px; /* Increased bottom margin for spacing */
+  font-size: 18px; /* Increased input font size */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 15px; /* Increased button padding */
+  font-size: 18px; /* Increased button font size */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Changed button border-radius */
+  cursor: pointer;
+  margin-bottom: 20px; /* Increased margin-bottom for more space between buttons */
+}
+
+button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  display: flex;
+  align-items: center; /* Centered items vertically */
+  font-size: 30px; /* Increased font size */
+  margin-top: -380px; /* Adjusted margin-top for positioning */
+}
+
+.icon {
+  margin-right: 15px; /* Adjusted spacing between icon and text */
+  font-size: 32px; /* Increased font size for icon */
+}

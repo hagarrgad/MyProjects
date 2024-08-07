@@ -1,0 +1,128 @@
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>customer mail</th>
+        <th>customer Id</th>
+        <th>customer number</th>
+        <th>Order order_status</th>
+        <th>Purposed Date</th>
+        <th>Reschedule</th>
+        <th>Reassign</th>
+        <th>Cancel Order</th>
+        <th>Forceclose</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (workOrder of workOrders; track $index) {
+      <tr>
+        <td>{{ workOrder.id }}</td>
+        <td>{{ workOrder.cmail }}</td>
+        <td>{{ workOrder.cid }}</td>
+        <td>{{ workOrder.cnumber }}</td>
+        <td>{{ workOrder.order_status }}</td>
+        <td>{{ workOrder.pruposed_date }}</td>
+        @if (!isDisable(workOrder.order_status)) {
+          <td><button (click)="openModal('reschedule', workOrder)">Reschedule</button></td>
+          <td><button (click)="openModal('reassign', workOrder); gettechname(workOrder.id)">Reassign</button></td>
+          <td><button (click)="Cancelorder(workOrder)">Cancel</button></td>
+          <td><button (click)="Forceorder(workOrder)">ForceClose</button></td>
+          <td><button (click)="openModal('details', workOrder)">Details</button></td>
+          <!-- //take 5 column when disapled -->
+        } @else {
+          <td colspan="5">No Actions Allowed</td> 
+        }
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal HTML -->
+@if(isModalOpen){
+<div class="modal">
+  <div class="modal-dialog" (click)="$event.stopPropagation()">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          {{
+            modalContentType === 'reschedule'
+              ? 'Reschedule Order'
+              : modalContentType === 'reassign'
+              ? 'Reassign Order'
+              : 'Order Details'
+          }}
+        </h5>
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          (click)="closeModal()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            @if (modalContentType === 'reschedule') {
+              <label for="rescheduleDate">Reschedule Date:</label>
+              <input
+                type="date"
+                id="rescheduleDate"
+                class="form-control"
+                [(ngModel)]="rescheduleDate"
+                name="rescheduleDate"
+                (change)="getSlots()"
+              >
+              <label for="slotsDropdown">Select slots:</label>
+              <select
+                [disabled]="slots.length == 0"
+                id="slotsDropdown"
+                class="form-control"
+                [(ngModel)]="selectedSlot"
+                name="status"
+              >
+                @for (slot of slots; track $index) {
+                  <option [value]="slot">{{ slot }}</option>
+                }
+              </select>
+            } @else if (modalContentType === 'reassign') {
+              <label for="statusDropdown">Select technician:</label>
+              <select
+                id="statusDropdown"
+                class="form-control"
+                [(ngModel)]="selectedTechnician"
+                name="status"
+              >
+                @for (status of statuses; track $index) {
+                  <option [hidden]="status==currentWO.selectedTechnician" [value]="status">{{ status }}</option>
+                }
+              </select>
+            } @else {
+              <!-- Details content -->
+              <p>Order ID: {{ currentWO.id }}</p>
+              <p>Customer Mail: {{ currentWO.cmail }}</p>
+              <p>Customer ID: {{ currentWO.cid }}</p>
+              <p>Customer Number: {{ currentWO.cnumber }}</p>
+              <p>Order Status: {{ currentWO.order_status }}</p>
+              <p>Proposed Date: {{ currentWO.pruposed_date }}</p>
+              <!-- Add more details as needed -->
+            }
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" (click)="saveChanges()">
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+}

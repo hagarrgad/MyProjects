@@ -1,0 +1,182 @@
+.table-container {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  margin: 1rem 2rem;
+  margin-top: 20px;
+  height: 500px;
+  overflow: auto;
+  // overflow: auto;
+  // height: 100vh; /* Full height of the viewport */
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%; /* Adjust as needed */
+  height: 500px;
+  max-height: 500px;
+}
+
+tbody {
+  max-height: 100%;
+  overflow: hidden;
+}
+
+th,
+td {
+  border: 1px solid #0d0d0dd1;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #1313133e;
+}
+
+//   modal css
+
+// .modal {
+//     display: block;
+//     background: rgba(0, 0, 0, 0.5);
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     justify-content: center;
+//     align-items: center;
+//   }
+
+//   .modal-dialog {
+//     background: #3e63685f;
+//     border-radius: 4px;
+//     margin: 50px auto;
+//     padding: 30px;
+//     width: 600px;
+//     height: 350px;
+//     position: relative;
+//   }
+
+//   .modal-header, .modal-footer {
+//     display: flex;
+//     justify-content: space-between;
+//   }
+
+//   .close {
+//     background: transparent;
+//     border: none;
+//     font-size: 1.5em;
+//   }
+
+//   .modal-content {
+//     font-size: 15px; /* Increase the base font size for the modal content */
+//   }
+
+//   .modal-header {
+//     font-size: 15px; /* Increase the font size for the modal header */
+//   }
+
+//   .modal-title {
+//     font-size: 2em; /* Increase the font size for the modal title */
+//   }
+
+//   .modal-body {
+//     font-size: 1.2em; /* Increase the font size for the modal body text */
+//     flex: 1; /* Grow to take up available space */
+//   }
+
+//   .modal-footer {
+//     display: flex;
+//     justify-content: flex-end; /* Align buttons to the end */
+//     border-top: 1px solid #ddd;
+//     font-size: 1.2em; /* Increase the font size for the modal footer */
+
+//   }
+
+//   .btn {
+//     font-size: 1.1em; /* Increase the font size for buttons */
+//   }
+
+.modal {
+  display: block;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-dialog {
+  background: #0b1213cc;
+  border-radius: 4px;
+  margin: 50px auto;
+  padding: 30px;
+  width: 600px;
+  max-height: 80vh; /* Allow modal to grow but prevent overflow */
+  height: auto;
+  display: flex;
+  flex-direction: column; /* Ensure vertical stacking */
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.modal-header,
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.8em;
+}
+
+.close {
+  background: transparent;
+  border: none;
+  font-size: 1.5em;
+}
+
+.modal-body {
+  font-size: 1.2em;
+  flex: 1; /* Grow to take up available space */
+  margin-bottom: 20px; /* Space below the body content */
+  overflow-y: auto; /* Add vertical scrollbar if content overflows */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Space between form elements */
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+select.form-control {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #ddd;
+  font-size: 1.2em;
+}
+
+.btn {
+  font-size: 1.1em;
+  margin-left: 10px; /* Space between buttons */
+}

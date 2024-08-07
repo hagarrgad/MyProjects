@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #33333363; /* Background color of the navigation bar */
+  padding: 10px 20px; /* Padding inside the navigation bar */
+  color: white; /* Text color */
+  display: flex; /* Flexbox for layout */
+  align-items: center; /* Center items vertically */
+}
+
+.navbar-content {
+  display: flex; /* Flexbox for layout */
+  width: 100%; /* Full width */
+  justify-content: space-between; /* Space out items */
+  align-items: center; /* Center items vertically */
+}
+
+.search-bar-container {
+  flex: 1; /* Take up remaining space */
+  display: flex; /* Flexbox for layout */
+  justify-content: center; /* Center horizontally */
+}
+
+.search-input-wrapper {
+  position: relative; /* Contain the button and input */
+  display: flex; /* Align button and input */
+  align-items: center; /* Vertically center the button and input */
+}
+
+.search-input {
+  width: 600px; /* Width of the search bar */
+  height: 60px; /* Height of the search bar */
+  padding: 15px 15px 15px 15px; /* Adjust padding for button */
+  font-size: 24px; /* Font size of the text */
+  background-color: rgb(238, 229, 229);
+  color: rgb(41, 40, 40);
+  border: 3px solid #2e2e2e; /* Border style */
+  border-radius: 30px; /* Semi-round shape */
+  box-sizing: border-box;
+}
+
+.search-input::placeholder {
+  color: #ccc;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.search-button {
+  position: absolute;
+  right: 10px; /* Position button inside the input field */
+  height: 90%; /* Full height of the search bar */
+  width: 60px; /* Width of the button */
+  border: none; /* Remove default border */
+  border-radius: 30px; /* Match input border-radius */
+  background-color: rgb(238, 229, 229); /* Button background color */
+  color: rgb(41, 40, 40); /* Button text color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 24px; /* Size of the icon */
+}
+
+.search-button i {
+  font-size: 24px; /* Size of the icon */
+}
+
+.search-button:hover {
+  background-color: #08162494; /* Darker background on hover */
+}
+
+.navbar-buttons {
+  display: flex; /* Align buttons horizontally */
+}
+
+.navbar-button {
+  background-color: #35383b49; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Round button corners */
+  padding: 10px 20px; /* Padding inside buttons */
+  margin-left: 10px; /* Space between buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size of button text */
+}
+
+.navbar-button:hover {
+  background-color: #081624a5; /* Darker background on hover */
+}
+
+.hidden-container {
+  display: none; /* Initially hidden */
+  padding: 20px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.hidden-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden-container input {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
